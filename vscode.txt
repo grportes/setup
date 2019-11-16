@@ -9,7 +9,6 @@ Fonte: https://www.edivaldobrito.com.br/visual-studio-code-no-linux/
 
 Baixar "code-stable-1573664143.tar.gz" no site "https://code.visualstudio.com/Download"
 
-
 teste@teste:~/Downloads$  code-stable-1573664143.tar.gz
 teste@teste:~/Downloads$  tar xvzf code-*.tar.gz
 teste@teste:~/Downloads$  mv VSCode*/ vscode
