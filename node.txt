@@ -1,0 +1,11 @@
+Instalação Node via nvm: 
+
+Link: https://github.com/nvm-sh/nvm
+
+teste@teste:~$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+
+teste@teste: nvm
+teste@teste: nvm ls-remote
+teste@teste: nvm install v12.13.0   // -> versão do node
+teste@teste: node -v
+
