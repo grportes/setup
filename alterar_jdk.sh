@@ -1,10 +1,11 @@
 #!/bin/bash
 
-DIR_JAVA8="/usr/lib/jvm/jdk-oracle-8"
-DIR_JAVA11="/usr/lib/jvm/jdk-amazon-corretto-11"
-
 init() 
 {
+	echo "-------------------------------------------------------------------"
+	echo "Executando update-alternatives para java, javac e jar "
+	echo "-------------------------------------------------------------------"
+	
 	sudo update-alternatives --config java
 	sudo update-alternatives --config javac
 	sudo update-alternatives --config jar
@@ -28,8 +29,8 @@ init()
 	echo "Recarregando /etc/profile"
 	echo "-------------------------------------------------------------------"
 
-	su -c 'source /etc/profile'
-	
+	sudo -s
+	source /etc/profile
 }
 
 init
