@@ -1,0 +1,43 @@
+Instalação Java 8:
+
+Fonte: https://www.blogopcaolinux.com.br/2017/06/Como-instalar-o-Oracle-Java-JDK-no-Debian.html
+
+teste@teste:~$ sudo apt-get remove icedtea-*-plugin
+
+Fazer o donwload do jdk no site da Oracle jdk-8u231-linux-x64.tar.gz
+
+teste@teste:~/Downloads$  jdk-8u231-linux-x64.tar.gz
+teste@teste:~/Downloads$  tar xvzf jdk-*.tar.gz
+teste@teste:~/Downloads$  mv jdk*/ jdk-oracle-8 
+teste@teste:~/Downloads$  sudo su
+
+root@root:~/Downloads$  cp -rp jdk-oracle-8 /usr/lib/jvm
+root@root:~/Downloads$  rm -R jdk-oracle-8
+
+Executar 1 de cada vez!!
+
+root@root:~/Downloads$ update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-oracle-8/bin/java" 1
+root@root:~/Downloads$ update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk-oracle-8/bin/javac" 1
+root@root:~/Downloads$ update-alternatives --install "/usr/bin/jar" "jar" "/usr/lib/jvm/jdk-oracle-8/bin/jar" 1
+root@root:~/Downloads$ update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk-oracle-8/bin/javaws" 1
+
+root@root:~/Downloads$ update-alternatives --set java /usr/lib/jvm/jdk-oracle-8/bin/java
+root@root:~/Downloads$ update-alternatives --set javac /usr/lib/jvm/jdk-oracle-8/bin/javac
+root@root:~/Downloads$ update-alternatives --set jar /usr/lib/jvm/jdk-oracle-8/bin/jar
+root@root:~/Downloads$ update-alternatives --set javaws /usr/lib/jvm/jdk-oracle-8/bin/javaws
+
+root@root:~/Downloads$ update-alternatives --config java
+root@root:~/Downloads$ update-alternatives --config javac
+root@root:~/Downloads$ update-alternatives --config jar
+root@root:~/Downloads$ update-alternatives --config java
+
+
+Editar o arquivo /etc/profile e acrescentar na ultima linha:
+
+JAVA_HOME=/usr/lib/jvm/jdk-oracle
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export PATH
+
+root@root:~/Downloads$ su -c 'source /etc/profile'
+root@root:~/Downloads$ java -version
