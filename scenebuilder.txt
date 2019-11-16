@@ -1,0 +1,7 @@
+Instalação do Scene Builder
+
+Baixar arquivo .deb em "https://gluonhq.com/products/scene-builder/"
+
+teste@teste:~/Downloads$  scenebuilder-8.5.0.deb
+teste@teste:~/Downloads$  sudo dpkg -i scenebuilder-8.5.0.deb
+
