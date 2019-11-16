@@ -1,0 +1,32 @@
+Instalação manual do VSCode.
+
+Fonte: https://www.edivaldobrito.com.br/visual-studio-code-no-linux/
+
+
+-------------------------------------------------------------------------
+-- Instalação
+-------------------------------------------------------------------------
+
+Baixar "code-stable-1573664143.tar.gz" no site "https://code.visualstudio.com/Download"
+
+
+teste@teste:~/Downloads$  code-stable-1573664143.tar.gz
+teste@teste:~/Downloads$  tar xvzf code-*.tar.gz
+teste@teste:~/Downloads$  mv VSCode*/ vscode
+teste@teste:~/Downloads$  sudo su
+
+root@root:~/Downloads$  cp -rp vscode /opt/
+root@root:~/Downloads$  rm -R vscode
+root@root:~/Downloads$  ln -sf /opt/vscode/code /usr/bin/code
+root@root:~/Downloads$  exit
+
+teste@teste:~/Downloads$  code
+
+
+-------------------------------------------------------------------------
+-- Remover
+-------------------------------------------------------------------------
+
+teste@teste:~/ sudo rm -Rf /opt/vscode/*
+teste@teste:~/ sudo rm -Rf /opt/vscode/code
+teste@teste:~/ sudo rm -Rf /usr/share/applications/vscode.desktop
